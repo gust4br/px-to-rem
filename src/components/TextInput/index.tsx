@@ -9,11 +9,14 @@ interface TextInputProps{
 export function TextInput({ name, startValue } : TextInputProps){
   const [inputNumber, setInputNumber ] = useState("");
 
+  function handleClipboardClick(){
+    navigator.clipboard.writeText(inputNumber);
+  }
+
   useEffect(() => {
     if(startValue)
       setInputNumber(String(startValue));
-  }, [])
-
+  }, []);
   return(
     <div className="flex items-center flex-col gap-1 text-gray-100 font-semibold text-xs group">
       <span>{name}</span>
@@ -27,6 +30,7 @@ export function TextInput({ name, startValue } : TextInputProps){
         />
         <span className="absolute right-2 text-gray-400 text-xs font-normal group-hover:opacity-0 transition-opacity duration-500">{name}</span>
         <a 
+        onClick={() => {handleClipboardClick()}}
         href="#"
         className="
         absolute right-0 opacity-0 
