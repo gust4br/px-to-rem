@@ -1,11 +1,32 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { AiFillGithub, AiFillLinkedin } from "react-icons/ai";
 import { CgArrowsExchangeAlt } from "react-icons/cg";
 import { TextInput } from "./components";
 
 export function App() {
-  const [pixelsValue, setPixelsValue] = useState(0);
-  const [remValue, setRemValue] = useState(0);  
+  const [pixelsValue, setPixelsValue] = useState(16);
+  const [remValue, setRemValue] = useState(0);
+  const [hasChanged, setHasChanged] = useState('Pixels');
+  const [remFontsize, setRemFontsize] = useState(16);
+
+  function handlePixelValueChange(value: number){
+    setPixelsValue(value);
+  }
+
+  function handleRemValueChange(value: number){
+    setRemValue(value);
+  }
+
+  function handleChangedInput(str: string){
+    setHasChanged(str);
+  }
+
+  useEffect(() => {
+    if(hasChanged === 'Pixels')
+      setRemValue(pixelsValue / remFontsize);
+    else if(hasChanged === 'REM')
+      setPixelsValue(remValue * remFontsize);
+  }, [pixelsValue, remValue]);
 
   return (
     <div className="grid grid-cols-1 grid-rows-3 items-center justify-between w-screen h-screen">
@@ -15,11 +36,11 @@ export function App() {
       </header>
       <main className="flex items-center justify-center">
         <div className="flex flex-col gap-4 text-gray-400 w-fit">
-          <TextInput name="Pixels" startValue={16} />
+          <TextInput name="Pixels" valueHandler={handlePixelValueChange} value={pixelsValue} handleChangedInput={handleChangedInput} />
           <a href="#" className="w-full flex items-center justify-end relative h-[30px]">
             <CgArrowsExchangeAlt size={30} className="absolute bottom-[-8px]"/>
           </a>
-          <TextInput name="REM" />
+          <TextInput name="REM" valueHandler={handleRemValueChange} value={remValue} handleChangedInput={handleChangedInput}/>
         </div>
       </main>
       <footer className="w-screen flex flex-col justify-end items-center gap-2 p-6 h-full">

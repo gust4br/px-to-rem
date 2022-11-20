@@ -3,20 +3,26 @@ import { HiOutlineClipboard } from "react-icons/hi";
 
 interface TextInputProps{
   name: string,
-  startValue?: number,
+  valueHandler: (value: number) => void,
+  value: number,
+  handleChangedInput: (str : string) => void,
 }
 
-export function TextInput({ name, startValue } : TextInputProps){
-  const [inputNumber, setInputNumber ] = useState("");
+export function TextInput({ name, valueHandler, value, handleChangedInput } : TextInputProps){
+  const [inputNumber, setInputNumber ] = useState(0);
 
   function handleClipboardClick(){
-    navigator.clipboard.writeText(inputNumber);
+    navigator.clipboard.writeText(String(inputNumber));
+  }
+
+  function handleTextChange(event: any){
+    handleChangedInput(name)
+    valueHandler(Number(event.target.value));
   }
 
   useEffect(() => {
-    if(startValue)
-      setInputNumber(String(startValue));
-  }, []);
+      setInputNumber(value);
+  }, [value]);
   return(
     <div className="flex items-center flex-col gap-1 text-gray-100 font-semibold text-xs group">
       <span>{name}</span>
@@ -26,7 +32,7 @@ export function TextInput({ name, startValue } : TextInputProps){
         className="bg-transparent outline-none text-gray-100 text-xl text-center" 
         id={name} 
         value={inputNumber}
-        onChange={(e => setInputNumber(e.target.value))}
+        onChange={(e) => {handleTextChange(e)}}
         />
         <span className="absolute right-2 text-gray-400 text-xs font-normal group-hover:opacity-0 transition-opacity duration-500">{name}</span>
         <a 
