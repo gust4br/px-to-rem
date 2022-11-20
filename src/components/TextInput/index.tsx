@@ -34,7 +34,7 @@ export function TextInput({ name, valueHandler, value, handleChangedInput } : Te
   return(
     <div className="flex items-center flex-col gap-1 text-gray-100 font-semibold text-xs group">
       <span>{name}</span>
-      <label className="flex items-center justify-between bg-gray-800 p-2 relative rounded-[4px] border border-gray-400" htmlFor={name}>
+      <label className="flex items-center justify-between bg-gray-800 p-2 relative rounded-[4px] border border-gray-400 focus-within:bg-gray-900 " htmlFor={name}>
         <input 
         type="number" 
         className="bg-transparent outline-none text-gray-100 text-xl text-center" 
