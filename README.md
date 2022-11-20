@@ -1,5 +1,5 @@
 <h1 align="center" href>PX TO REM</h1>
-<h2 align="center"> This a<a href="https://code-art.dev/">personal project</a>.</h2>
+<h2 align="center"> This a <a href="https://code-art.dev/">personal project</a>.</h2>
 
 <h3 align="center">
   🚧 Status: Working on 🚧
@@ -22,6 +22,12 @@ This is an personal project to easily convert pixels to rem and vice-versa
 - [x] REM TO PX convertion
 - [x] Copy to clipboard
 - [x] Toast
+- [ ] Change the default font size
+- [ ] English by default
+- [ ] Google Analytics
+- [ ] Deploy
+- [ ] Tests
+- [ ] Light Mode
 
 ### Tech:
 #### the following tools were used in this project:
