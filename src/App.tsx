@@ -8,6 +8,7 @@ export function App() {
   const [remValue, setRemValue] = useState(0);
   const [hasChanged, setHasChanged] = useState('Pixels');
   const [remFontsize, setRemFontsize] = useState(16);
+  const [remIsFirst, setRemIsFirst] = useState(false);
 
   function handlePixelValueChange(value: number){
     setPixelsValue(value);
@@ -19,6 +20,10 @@ export function App() {
 
   function handleChangedInput(str: string){
     setHasChanged(str);
+  }
+
+  function handleSwitchFirst(){
+    setRemIsFirst(!remIsFirst);
   }
 
   useEffect(() => {
@@ -35,9 +40,17 @@ export function App() {
         <p className="text-gray-100 text-sm text-center">Converta facilmente px para rem</p>
       </header>
       <main className="flex items-center justify-center">
-        <div className="flex flex-col gap-4 text-gray-400 w-fit">
+        <div className={`flex ${remIsFirst ? 'flex-col-reverse' : 'flex-col'} gap-4 text-gray-400 w-fit`}>
           <TextInput name="Pixels" valueHandler={handlePixelValueChange} value={pixelsValue} handleChangedInput={handleChangedInput} />
-          <a href="#" className="w-full flex items-center justify-end relative h-[30px]">
+          <a 
+          href="#"
+          onClick={() => handleSwitchFirst()}
+          className="w-full flex items-center justify-end
+            hover:opacity-80
+            active:translate-y-[1px]
+            relative 
+            h-[30px]"
+           >
             <CgArrowsExchangeAlt size={30} className="absolute bottom-[-8px]"/>
           </a>
           <TextInput name="REM" valueHandler={handleRemValueChange} value={remValue} handleChangedInput={handleChangedInput}/>
