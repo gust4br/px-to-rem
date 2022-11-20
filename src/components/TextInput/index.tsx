@@ -45,7 +45,11 @@ export function TextInput({ name, valueHandler, value, handleChangedInput } : Te
         p-3 
         rounded-[4px]"
         >
-        <HiOutlineClipboard color="#7c7c8a" size={24} />
+        <HiOutlineClipboard 
+        className="active:translate-y-[1px]"
+        color="#7c7c8a" 
+        size={24}
+        />
         </a>
       </label>
     </div>
