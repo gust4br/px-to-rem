@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import toast from "react-hot-toast";
 import { HiOutlineClipboard } from "react-icons/hi";
 
 interface TextInputProps{
@@ -13,6 +14,13 @@ export function TextInput({ name, valueHandler, value, handleChangedInput } : Te
 
   function handleClipboardClick(){
     navigator.clipboard.writeText(String(inputNumber));
+    toast.success(`${name} copiado com sucesso!`, {
+      style: {
+        borderRadius: '4px',
+        background: '#202024',
+        color: '#e1e1e6',
+      },
+    });
   }
 
   function handleTextChange(event: any){
