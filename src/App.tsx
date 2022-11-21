@@ -31,7 +31,7 @@ export function App() {
       setRemValue(pixelsValue / remFontsize);
     else if(hasChanged === 'REM')
       setPixelsValue(remValue * remFontsize);
-  }, [pixelsValue, remValue]);
+  }, [pixelsValue, remValue, remFontsize]);
 
   return (
     <div className="grid grid-cols-1 grid-rows-3 items-center justify-between w-screen h-screen">
@@ -39,7 +39,7 @@ export function App() {
         <h1 className="text-orange-900 text-2xl font-bold text-center">PX TO REM</h1>
         <p className="text-gray-100 text-sm text-center">Converta facilmente px para rem</p>
       </header>
-      <main className="flex items-center justify-center">
+      <main className="flex flex-col items-center justify-center">
         <div className={`flex ${remIsFirst ? 'flex-col-reverse' : 'flex-col'} gap-4 text-gray-400 w-fit`}>
           <TextInput name="Pixels" valueHandler={handlePixelValueChange} value={pixelsValue} handleChangedInput={handleChangedInput} />
           <a 
@@ -55,6 +55,16 @@ export function App() {
           </a>
           <TextInput name="REM" valueHandler={handleRemValueChange} value={remValue} handleChangedInput={handleChangedInput}/>
         </div>
+        <label className="text-gray-400 mt-10">
+          Valor do Font-size: 
+          <input 
+          type="number"
+          className="bg-transparent outline-none border-b-[1px] border-gray-400 w-5 mx-1 text-center" 
+          value={remFontsize}
+          onChange={(e => { setRemFontsize(Number(e.target.value)); })}
+          />
+          px.
+        </label>
       </main>
       <footer className="w-screen flex flex-col justify-end items-center gap-2 p-6 h-full">
         <span className="text-gray-400 text-md">Developed by <a href="https://code-art.dev" target="_blank"><strong>Gustavosgdev</strong></a> with 💜</span>

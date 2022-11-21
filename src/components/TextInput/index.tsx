@@ -23,7 +23,7 @@ export function TextInput({ name, valueHandler, value, handleChangedInput } : Te
     });
   }
 
-  function handleTextChange(event: any){
+  function handleTextChange(event: React.ChangeEvent<HTMLInputElement>){
     handleChangedInput(name)
     valueHandler(Number(event.target.value));
   }

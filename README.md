@@ -22,7 +22,7 @@ This is an personal project to easily convert pixels to rem and vice-versa
 - [x] REM TO PX convertion
 - [x] Copy to clipboard
 - [x] Toast
-- [ ] Change the default font size
+- [x] Change the default font size
 - [ ] English by default
 - [ ] Google Analytics
 - [ ] Deploy
