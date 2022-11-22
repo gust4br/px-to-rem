@@ -37,7 +37,7 @@ export function App() {
     <div className="grid grid-cols-1 grid-rows-3 items-center justify-between w-screen h-screen">
       <header className="flex flex-col items-center justify-end h-full">
         <h1 className="text-orange-900 text-2xl font-bold text-center">PX TO REM</h1>
-        <p className="text-gray-100 text-sm text-center">Converta facilmente px para rem</p>
+        <p className="text-gray-100 text-sm text-center">Convert Pixels to REM Easily.</p>
       </header>
       <main className="flex flex-col items-center justify-center">
         <div className={`flex ${remIsFirst ? 'flex-col-reverse' : 'flex-col'} gap-4 text-gray-400 w-fit`}>
@@ -56,7 +56,7 @@ export function App() {
           <TextInput name="REM" valueHandler={handleRemValueChange} value={remValue} handleChangedInput={handleChangedInput}/>
         </div>
         <label className="text-gray-400 mt-10">
-          Valor do Font-size: 
+          Value of Font-size: 
           <input 
           type="number"
           className="bg-transparent outline-none border-b-[1px] border-gray-400 w-5 mx-1 text-center" 
@@ -67,6 +67,11 @@ export function App() {
         </label>
       </main>
       <footer className="w-screen flex flex-col justify-end items-center gap-2 p-6 h-full">
+        <a 
+        className="text-gray-400 text-xs text-center underline underline-offset-2 mt-6"
+        href="https://www.freecodecamp.org/news/what-is-rem-in-css/"
+        target="_blank"
+        >What is REM?</a>
         <span className="text-gray-400 text-md">Developed by <a href="https://code-art.dev" target="_blank"><strong>Gustavosgdev</strong></a> with 💜</span>
         <div className="flex gap-2 items-center text-gray-400 text-lg">
           <a 

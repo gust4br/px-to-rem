@@ -23,8 +23,8 @@ This is an personal project to easily convert pixels to rem and vice-versa
 - [x] Copy to clipboard
 - [x] Toast
 - [x] Change the default font size
-- [ ] English by default
-- [ ] Google Analytics
+- [x] English by default
+- [x] What is REM?
 - [ ] Deploy
 - [ ] Tests
 - [ ] Light Mode

@@ -13,7 +13,7 @@ export function TextInput({ name, valueHandler, value, handleChangedInput } : Te
   const [inputNumber, setInputNumber ] = useState(0);
 
   function handleClipboardClick(){
-    navigator.clipboard.writeText(String(inputNumber));
+    navigator.clipboard.writeText(String(inputNumber + `${name === 'REM' ? 'rem' : 'px'}`));
     toast.success(`${name} copiado com sucesso!`, {
       style: {
         borderRadius: '4px',
