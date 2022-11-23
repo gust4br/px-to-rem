@@ -34,7 +34,7 @@ export function App() {
   }, [pixelsValue, remValue, remFontsize]);
 
   return (
-    <div className="grid grid-cols-1 grid-rows-3 items-center justify-between w-screen h-screen">
+    <div className="grid grid-cols-1 grid-rows-[12fr, 3fr, 1fr] items-center justify-between w-screen h-screen">
       <header className="flex flex-col items-center justify-end h-full">
         <h1 className="text-orange-900 text-2xl font-bold text-center">PX TO REM</h1>
         <p className="text-gray-100 text-sm text-center">Convert Pixels to REM Easily.</p>
