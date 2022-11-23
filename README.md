@@ -11,7 +11,7 @@
  <a href="#tech">Tech</a> • 
 </p>
 
-[Access the project](https://front-on-food-nu.vercel.app/)
+[Access the project](https://px-to-rem-sigma.vercel.app/)
 
 ### About:
 This is an personal project to easily convert pixels to rem and vice-versa
@@ -25,7 +25,7 @@ This is an personal project to easily convert pixels to rem and vice-versa
 - [x] Change the default font size
 - [x] English by default
 - [x] What is REM?
-- [ ] Deploy
+- [x] Deploy
 - [ ] Tests
 - [ ] Light Mode
 
