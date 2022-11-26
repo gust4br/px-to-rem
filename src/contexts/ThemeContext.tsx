@@ -15,15 +15,14 @@ export function ThemeProvider({children}: ThemeProviderProps){
   const [theme, setTheme] = useState('');
 
   useEffect(() => {
-    if(localStorage.getItem('theme')){
+    if(localStorage.getItem('theme'))
       setTheme(String(localStorage.getItem('theme')));
-    }else {
-      localStorage.setItem('theme', 'dark');
-    }
+    else if(localStorage.getItem('theme') === null)
+      setTheme('dark');
   }, []);
 
   useEffect(() => {
-    localStorage.setItem('theme', theme);
+      localStorage.setItem('theme', theme);
   }, [theme]);
 
   return(
