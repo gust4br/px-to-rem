@@ -32,12 +32,15 @@ export function TextInput({ name, valueHandler, value, handleChangedInput } : Te
       setInputNumber(value);
   }, [value]);
   return(
-    <div className="flex items-center flex-col gap-1 text-gray-100 font-semibold text-xs group">
+    <div className="flex items-center flex-col gap-1 dark:text-gray-100 text-gray-400 font-semibold text-xs group">
       <span>{name}</span>
-      <label className="flex items-center justify-between bg-gray-800 p-2 relative rounded-[4px] border border-gray-400 focus-within:bg-gray-900 " htmlFor={name}>
+      <label tabIndex={0} className="flex items-center justify-between dark:bg-gray-800 bg-gray-100 p-2 relative rounded-[4px] border border-gray-400 
+      dark:focus-within:bg-gray-900
+      focus-within:bg-gray-500
+      " htmlFor={name}>
         <input 
         type="number" 
-        className="bg-transparent outline-none text-gray-100 text-xl text-center" 
+        className="bg-transparent outline-none dark:text-gray-100 text-gray-400 text-xl text-center" 
         id={name} 
         value={inputNumber}
         onChange={(e) => {handleTextChange(e)}}
@@ -49,7 +52,8 @@ export function TextInput({ name, valueHandler, value, handleChangedInput } : Te
         className="
         absolute right-0 opacity-0 
         group-hover:opacity-100 transition-opacity duration-500
-        hover:bg-gray-900
+        dark:hover:bg-gray-900
+        hover:bg-gray-600
         p-3 
         rounded-[4px]"
         >

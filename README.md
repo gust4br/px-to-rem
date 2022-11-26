@@ -27,7 +27,7 @@ This is an personal project to easily convert pixels to rem and vice-versa
 - [x] What is REM?
 - [x] Deploy
 - [ ] Tests
-- [ ] Light Mode
+- [x] Light Mode
 
 ### Tech:
 #### the following tools were used in this project:
