@@ -14,7 +14,7 @@ export function TextInput({ name, valueHandler, value, handleChangedInput } : Te
 
   function handleClipboardClick(){
     navigator.clipboard.writeText(String(inputNumber + `${name === 'REM' ? 'rem' : 'px'}`));
-    toast.success(`${name} copiado com sucesso!`, {
+    toast.success(`${name} copied to clipboard!`, {
       style: {
         borderRadius: '4px',
         background: '#202024',
