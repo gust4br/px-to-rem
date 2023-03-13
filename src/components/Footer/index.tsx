@@ -8,14 +8,14 @@ export function Footer(){
     href="https://www.freecodecamp.org/news/what-is-rem-in-css/"
     target="_blank"
     >What is REM?</a>
-    <span className="text-gray-400 text-md">Developed by <a href="https://code-art.dev" target="_blank"><strong>Gustavosgdev</strong></a> with 💜</span>
+    <span className="text-gray-400 text-md">Developed by <a href="https://code-art.dev" target="_blank"><strong>Gust4br</strong></a> with 💜</span>
     <div className="flex gap-2 items-center text-gray-400 text-lg">
       <a 
-      href="https://github.com/gustavosgdev" 
+      href="https://github.com/gust4br" 
       target="_blank" 
       className="hover:opacity-75 transition-opacity duration-150"><AiFillGithub /></a>
       <a 
-      href="https://www.linkedin.com/in/gustavo-da-silva-gomes-0b3b00194/" 
+      href="https://www.linkedin.com/in/gust4br/" 
       target="_blank" 
       className="hover:opacity-75 transition-opacity duration-150"><AiFillLinkedin /></a>
     </div>
