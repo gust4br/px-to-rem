@@ -40,4 +40,4 @@ This is an personal project to easily convert pixels to rem and vice-versa
 - react-icons
 
 
-> You can see the [package.json](https://github.com/gustavosgdev/px-to-rem/blob/main/package.json) file.
+> You can see the [package.json](https://github.com/gust4br/px-to-rem/blob/main/package.json) file.

@@ -15,7 +15,7 @@ export function Footer(){
       target="_blank" 
       className="hover:opacity-75 transition-opacity duration-150"><AiFillGithub /></a>
       <a 
-      href="https://www.linkedin.com/in/gust4br/" 
+      href="https://www.linkedin.com/in/gust4br/`" 
       target="_blank" 
       className="hover:opacity-75 transition-opacity duration-150"><AiFillLinkedin /></a>
     </div>
