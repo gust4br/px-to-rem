@@ -28,6 +28,7 @@ This is an personal project to easily convert pixels to rem and vice-versa
 - [x] Deploy
 - [ ] Tests
 - [x] Light Mode
+- [x] Keep the order of the inputs on local storage
 
 ### Tech:
 #### the following tools were used in this project:

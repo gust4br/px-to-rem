@@ -10,8 +10,8 @@ export function App() {
   const [remValue, setRemValue] = useState(0);
   const [hasChanged, setHasChanged] = useState('Pixels');
   const [remFontsize, setRemFontsize] = useState(16);
-  const [remIsFirst, setRemIsFirst] = useState(false);
-  const { theme, setTheme } = useTheme();
+  const [remIsFirst, setRemIsFirst] = useState<boolean|null>();
+  const { theme } = useTheme();
 
   function handlePixelValueChange(value: number){
     setPixelsValue(value);
@@ -35,6 +35,18 @@ export function App() {
     else if(hasChanged === 'REM')
       setPixelsValue(remValue * remFontsize);
   }, [pixelsValue, remValue, remFontsize]);
+
+  useEffect(() => {
+    if(localStorage.getItem('remIsFirst'))
+      setRemIsFirst(localStorage.getItem('remIsFirst') === 'true' ? true : false);
+    else if(localStorage.getItem('remIsFirst') === null)
+      setRemIsFirst(false);
+  }, []);
+
+  useEffect(() => {
+      if(remIsFirst != null && remIsFirst !== undefined)
+        localStorage.setItem('remIsFirst', remIsFirst.toString());
+  }, [remIsFirst]);
 
   return (
     <div className={`${theme} grid grid-cols-1 grid-rows-[12fr, 3fr, 1fr] items-center justify-between w-screen h-screen`}>
