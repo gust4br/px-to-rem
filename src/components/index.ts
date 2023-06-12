@@ -1,3 +1,5 @@
-import { TextInput } from "./TextInput"
+import { Header } from "./Header";
+import { TextInput } from "./TextInput";
+import { Footer } from "./Footer";
 
-export { TextInput }
+export { Header, TextInput, Footer }

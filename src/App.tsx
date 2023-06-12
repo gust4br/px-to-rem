@@ -1,9 +1,8 @@
 import { useEffect, useState } from "react";
 import { CgArrowsExchangeAlt } from "react-icons/cg";
-import { TextInput } from "./components";
-import { Footer } from "./components/Footer";
-import { Header } from "./components/Header";
 import { useTheme } from "./contexts/ThemeContext";
+
+import { Header, TextInput, Footer } from "./components";
 
 export function App() {
   const [pixelsValue, setPixelsValue] = useState(16);
