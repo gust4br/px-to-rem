@@ -53,17 +53,14 @@ export function App() {
       <main className="flex flex-col items-center justify-center">
         <div className={`flex ${remIsFirst ? 'flex-col-reverse' : 'flex-col'} gap-4 text-gray-400 w-fit`}>
           <TextInput name="Pixels" valueHandler={handlePixelValueChange} value={pixelsValue} handleChangedInput={handleChangedInput} />
-          <a 
-          href="#"
-          onClick={() => handleSwitchFirst()}
-          className="w-full flex items-center justify-end
-            hover:opacity-80
-            active:translate-y-[1px]
-            relative 
-            h-[30px]"
-           >
-            <CgArrowsExchangeAlt size={30} className="absolute bottom-[-8px]"/>
-          </a>
+          <div className="w-full flex items-center justify-end relative">
+            <a 
+              href="#"
+              onClick={() => handleSwitchFirst()}
+              className="hover:opacity-80 active:translate-y-[1px] h-[30px]">
+              <CgArrowsExchangeAlt size={30}/>
+            </a>
+          </div>
           <TextInput name="REM" valueHandler={handleRemValueChange} value={remValue} handleChangedInput={handleChangedInput}/>
         </div>
         <label className="text-gray-400 mt-10">
